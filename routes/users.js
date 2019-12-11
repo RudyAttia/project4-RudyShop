@@ -125,11 +125,17 @@ router.get('/infocount',(req, res) => {
         if (err) {
             res.json({ state: 'error', message: err.message })
         } else {
-            if (result.length > 0) {
-                res.json({ state: 'success', message: result })
-            } else {
-                res.json({ state: 'error', message: `No results!!!` })
-            }
+            console.log(result)
+            let countp=0,counto=0
+            if(result[0]){countp = result[0].countInfo}
+            if(result[1]){counto = result[1].countInfo}else{counto=result[0].countInfo}
+            res.json({ state: 'success', message: {countp, counto} })
+            // if (result.length > 0) {
+            //     if(result[0])
+            //     res.json({ state: 'success', message: result })
+            // } else {
+            //     res.json({ state: 'error', message: `No results!!!` })
+            // }
         }
     })
 });
