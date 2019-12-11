@@ -7,6 +7,10 @@
 -- Version du serveur :  10.4.8-MariaDB
 -- Version de PHP :  7.3.10
 
+
+CREATE DATABASE project_shop;
+USE project_shop;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
